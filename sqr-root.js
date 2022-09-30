@@ -14,24 +14,40 @@ function sqrRoot(n, e) {
 
     const low = 0
     const high = n
-    const x = Math.floor(n/2);
+    let x = n/2;
+    if (n < 1) x = n*2; // numbers between 0 and 1
     
-    if (tooHigh(n, x, e))
+    if (tooHigh(n, x, e)) {
+      // if (n < 1)
+      //   return sqrRootHelper(x, high, n, e);
       return sqrRootHelper(low, x, n, e);
-      //return sqrRootHelper(low, x, ..., e);
-    else if (tooLow(n, x, e))  
+    }
+    else if (tooLow(n, x, e)) {
+      // if (n < 1)
+      //   return sqrRootHelper(low, x, n, e);
       return sqrRootHelper(x, high, n, e);
-      //return sqrRootHelper(x, high, ..., e);
+    }
     else 
       return x;
   }
   
   function sqrRootHelper(low, high, n, e) {
-    const x = Math.floor((high + low)/2) ; 
-    if (tooHigh(n, x, e))
+    let x = (high + low)/2 ; 
+    if (n < 1) 
+      x = (high + low)*2; // numbers between 0 and 1
+
+    // console.log(`High: ${high} and Low: ${low}`);
+
+    if (tooHigh(n, x, e)) {
+      // if (n < 1) 
+      //   return sqrRootHelper(x, high, n, e);
       return sqrRootHelper(low, x, n, e);
-    else if (tooLow(n, x, e))
+    }
+    else if (tooLow(n, x, e)) {
+      // if (n < 1) 
+      //   return sqrRootHelper(low, x, n, e);
       return sqrRootHelper(x, high, n, e);
+    }
     else 
       return x;
   }
@@ -60,3 +76,7 @@ function sqrRoot(n, e) {
   // console.log(sqrRoot(25, 0));
   // console.log(sqrRoot(25, 1));
   // console.log(sqrRoot(25, 3));
+//   console.log(sqrRoot(2, 0.1));
+//   console.log(sqrRoot(3, 0.1));
+// console.log(sqrRoot(0.25, 0.00000002));
+// console.log(sqrRoot(0.9, 0.0001));

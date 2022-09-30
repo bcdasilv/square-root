@@ -1,0 +1,23 @@
+{
+  "name": "square-root",
+  "version": "1.0.0",
+  "description": "``` node sqr-root.js ```",
+  "main": "sqr-root.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node sqr-root.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcdasilv/square-root.git"
+  },
+  "author": "Bruno C da Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcdasilv/square-root/issues"
+  },
+  "homepage": "https://github.com/bcdasilv/square-root#readme",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}

@@ -33,15 +33,15 @@ test("4 precision 1", () => {
 });
 
 test("9 precision 1", () => {
-    expect(sqrRoot(9, 1)).toBe(3);
+    expect(sqrRoot(9, 1)).toBe(3.09375);
 });
 
 test("9 precision 7", () => {
-    expect(sqrRoot(9, 7)).toBe(4);
+    expect(sqrRoot(9, 7)).toBe(2.25);
 });
 
 test("9 precision 5", () => {
-    expect(sqrRoot(9, 5)).toBe(2);
+    expect(sqrRoot(9, 5)).toBe(2.25);
 });
 
 test("16 precision 0", () => {
@@ -58,4 +58,12 @@ test("16 precision 48", () => {
 
 test("16 precision 47", () => {
     expect(sqrRoot(16, 48)).toBe(8);
+});
+
+test("2 precision 0.1", () => {
+    expect(sqrRoot(2, 0.1)).toBe(1.4375);
+});
+
+test("3 precision 0.1", () => {
+    expect(sqrRoot(3, 0.1)).toBe(1.734375);
 });
